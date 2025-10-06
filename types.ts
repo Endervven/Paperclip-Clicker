@@ -20,3 +20,22 @@ export interface Achievement {
   // Optional for 'SPECIFIC_GENERATOR' type
   generatorId?: string;
 }
+
+// Data structures for saving game state
+
+export interface SavedGeneratorState {
+  id: string;
+  owned: number;
+}
+
+export interface SavedAchievementState {
+  id: string;
+  unlocked: boolean;
+}
+
+export interface SaveData {
+  paperclipCount: number;
+  generators: SavedGeneratorState[];
+  achievements: SavedAchievementState[];
+  lastSaveTime: number;
+}
